@@ -1,0 +1,16 @@
+<form action="#" th:action="@{/post/create}" th:object="${post}" method="post">
+    <label for="title">Title</label>
+    <input type="text" th:field="*{title}" id="title" placeholder="Title">
+    <span th:if="${#fields.hasErrors('title')}" th:errors="*{title}"></span>
+    
+    <label for="body">Body</label>
+    <input type="text" th:field="*{body}" id="body" placeholder="Body">
+    <span th:if="${#fields.hasErrors('body')}" th:errors="*{body}"></span>
+    
+    <label for="postType">Type</label>
+    <select th:field="*{postType}" id="postType" placeholder="Type">
+    	<option value="" disabled selected hidden>Select your option</option>
+    	<option th:each="i : ${postTypes}" th:value="${i}" th:text="${i}"></option>
+    </select>
+    <input type="submit" value="Salveaza articol">   
+</form>

@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Built-By: еее
+Build-Jdk: 11.0.1
+Implementation-Title: travel-blog
+Implementation-Version: 0.0.1-SNAPSHOT
+Implementation-Vendor-Id: ro.travelplan
+Implementation-URL: https://projects.spring.io/spring-boot/#/spring-boot
+ -starter-parent/travel-blog
+Created-By: Maven Integration for Eclipse
+

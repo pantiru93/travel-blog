@@ -1,0 +1,33 @@
+<form action="#" th:action="@{/trip/create}" th:object="${trip}" method="post">
+    <label for="checkin">Check in Date</label>
+    <input type="text" th:field="*{checkin}" id="checkin" placeholder="Checkin">
+    <span th:if="${#fields.hasErrors('checkin')}" th:errors="*{checkin}"></span>
+    
+    <label for="checkout">Check out Date</label>
+    <input type="text" th:field="*{checkout}" id="checkout" placeholder="Checkout">
+    <span th:if="${#fields.hasErrors('checkout')}" th:errors="*{checkout}"></span>
+    
+    <label for="defaultTrip">Default trip?</label>
+    <input type="checkbox" th:field="*{defaultTrip}" id="defaultTrip">
+    <span th:if="${#fields.hasErrors('defaultTrip')}" th:errors="*{defaultTrip}"></span>
+    
+    <label for="tripType">Type</label>
+    <select th:field="*{tripType}" id="tripType" placeholder="Type">
+    	<option value="">Select your option</option>
+    	<option th:each="i : ${tripTypes}" th:value="${i}" th:text="${i}"></option>
+    </select>
+    
+    <label for="destinationCity">Destination city</label>
+    <select th:field="*{destinationCity}" id="destinationCity">
+    	<option value="">Select your option</option>
+    	<option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}"></option>
+    </select>
+    
+    <label for="originCity">Origin city</label>
+    <select th:field="*{originCity}" id="originCity">
+    	<option value="">Select your option</option>
+    	<option th:each="city : ${cities}" th:value="${city.id}" th:text="${city.name}"></option>
+    </select>
+    
+    <input type="submit" value="Salveaza articol">   
+</form>

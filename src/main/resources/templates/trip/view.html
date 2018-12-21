@@ -1,0 +1,25 @@
+<html layout:decorate="~{layout.html}">
+<head>
+  <title>Content page</title>
+</head>
+<body>
+  <section layout:fragment="content">
+    <p>This is a paragraph from the content page</p>
+    <main id="trips">
+
+    		
+    		<h2 class="title" th:text="${trip.title}">Post Title</h2>
+    		<div class="date">
+    			<i>Post on</i>
+    			<span th:text="${#dates.format(trip.createdDate, 'dd-MMM-yyy')}">22-May-2018</span>
+    		</div>
+    	
+    	
+
+    </main>
+  </section>
+  <footer>
+    <p layout:fragment="custom-footer">This is some footer content from the content page</p>
+  </footer>
+</body>
+</html>
